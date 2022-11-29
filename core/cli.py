@@ -24,7 +24,7 @@ def main():
 @main.command()
 @click.option("--value", help="Value to be validated.")
 def validate(value: str) -> bool:
-    table = Table(title="Value")
+    table = Table(title="CPF and CNPJ validator")
     headers = ["CPF/CNPJ", "Is Valid?"]
     for header in headers:
         table.add_column(header, style="magenta")
