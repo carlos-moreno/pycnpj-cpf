@@ -1,7 +1,7 @@
 .PHONY: virtualenv install ipython lint fmt test watch clean docs docs-serve build publish-test publish
 
 virtualenv:
-	@python -m pip -m venv .venv
+	@python -m venv .venv
 
 install:
 	@echo "Installing for dev environment"
