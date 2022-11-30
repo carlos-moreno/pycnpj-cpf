@@ -1,6 +1,9 @@
 import pytest
 
-from core.core import calculate_second_digit_cnpj, calculate_second_digit_cpf
+from core.core import (
+    second_digit_cnpj_checker_is_valid,
+    second_digit_cpf_checker_is_valid,
+)
 
 
 @pytest.mark.unit
@@ -16,8 +19,8 @@ from core.core import calculate_second_digit_cnpj, calculate_second_digit_cpf
     ],
 )
 def test_positive_second_digit_cpf(value):
-    """Test positive for function calculate_second_digit_cpf."""
-    assert calculate_second_digit_cpf(value) == True
+    """Test positive for function second_digit_cpf_checker_is_valid."""
+    assert second_digit_cpf_checker_is_valid(value) == True
 
 
 @pytest.mark.unit
@@ -33,5 +36,5 @@ def test_positive_second_digit_cpf(value):
     ],
 )
 def test_positive_second_digit_cnpj(value):
-    """Test positive for function calculate_second_digit_cnpj."""
-    assert calculate_second_digit_cnpj(value) == True
+    """Test positive for function second_digit_cnpj_checker_is_valid."""
+    assert second_digit_cnpj_checker_is_valid(value) == True

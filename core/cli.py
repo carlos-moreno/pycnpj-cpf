@@ -3,7 +3,7 @@ import rich_click as click
 from rich.console import Console
 from rich.table import Table
 
-from .core import valida_cpf_cnpj
+from .core import cpf_or_cnpj_is_valid
 
 click.rich_click.USE_RICH_MARKUP = True
 click.rich_click.USE_MARKDOWN = True
@@ -29,7 +29,7 @@ def validate(value: str) -> bool:
     for header in headers:
         table.add_column(header, style="magenta")
 
-    result = valida_cpf_cnpj(value)
+    result = cpf_or_cnpj_is_valid(value)
     table.add_row(f"{value}", str(result))
     console = Console()
     console.print(table)

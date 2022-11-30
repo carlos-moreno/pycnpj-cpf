@@ -1,6 +1,6 @@
 import pytest
 
-from core.core import valida_cpf_cnpj
+from core.core import cpf_or_cnpj_is_valid
 
 
 @pytest.mark.unit
@@ -22,9 +22,9 @@ from core.core import valida_cpf_cnpj
         "42278632000161",
     ],
 )
-def test_positive_valida_cpf_cnpj(value):
-    """Test positive for function valida_cpf_cnpj."""
-    assert valida_cpf_cnpj(value) == True
+def test_positive_cpf_or_cnpj_is_valid(value):
+    """Test positive for function cpf_or_cnpj_is_valid."""
+    assert cpf_or_cnpj_is_valid(value) == True
 
 
 @pytest.mark.unit
@@ -32,11 +32,16 @@ def test_positive_valida_cpf_cnpj(value):
 @pytest.mark.parametrize(
     "value",
     [
+        "",
+        "0",
         "492.711.290-18",
         "299.621.190-34",
         "205.936.311-45",
         "41821799857",
         "34453213252",
+        "123",
+        "abcdeqweu",
+        "1234567891023102312301230",
         "33.378.832/0021-73",
         "81.109.847/0001-45",
         "85.840.121/0001-01",
@@ -48,6 +53,6 @@ def test_positive_valida_cpf_cnpj(value):
         "42278632067179",
     ],
 )
-def test_negative_valida_cpf_cnpj(value):
-    """Test negative for function valida_cpf_cnpj."""
-    assert valida_cpf_cnpj(value) == False
+def test_negative_cpf_or_cnpj_is_valid(value):
+    """Test negative for function cpf_or_cnpj_is_valid."""
+    assert cpf_or_cnpj_is_valid(value) == False
