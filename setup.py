@@ -34,7 +34,7 @@ setup(
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     author="Carlos Moreno",
-    email="omorenodovale@gmail.com",
+    author_email="omorenodovale@gmail.com",
     python_requires=">=3.8",
     packages=find_packages(exclude=["tests", "integration"]),
     include_package_data=True,
