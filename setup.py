@@ -28,7 +28,7 @@ def read_requirements(path):
 
 
 setup(
-    name="pycpf-cnpj",
+    name="py-cpf-cnpj",
     version="0.1.0",
     description="CPF and CNPJ validator",
     long_description=read("README.md"),
