@@ -1,6 +1,6 @@
 import pytest
 
-from core.core import extract_digits
+from pycpf_cnpj.core import extract_digits
 
 
 @pytest.mark.unit

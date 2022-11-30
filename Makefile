@@ -14,8 +14,8 @@ lint:
 	@.venv/bin/pflake8
 
 fmt:
-	@.venv/bin/isort core tests
-	@.venv/bin/black core tests
+	@.venv/bin/isort pycpf_cnpj tests
+	@.venv/bin/black pycpf_cnpj tests
 
 test:
 	@.venv/bin/pytest -s

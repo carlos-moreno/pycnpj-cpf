@@ -28,7 +28,7 @@ def read_requirements(path):
 
 
 setup(
-    name="py-cpf-cnpj",
+    name="carlos-moreno-cpf-cnpj",
     version="0.1.0",
     description="CPF and CNPJ validator",
     long_description=read("README.md"),
@@ -38,7 +38,7 @@ setup(
     python_requires=">=3.8",
     packages=find_packages(exclude=["tests", "integration"]),
     include_package_data=True,
-    entry_points={"console_scripts": {"pycpf-cnpj = core.__main__:main"}},
+    entry_points={"console_scripts": {"pycpf-cnpj = pycpf_cnpj.__main__:main"}},
     install_requires=read_requirements("requirements.txt"),
     extras_require={
         "test": read_requirements("requirements.test.txt"),

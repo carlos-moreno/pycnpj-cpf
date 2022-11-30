@@ -28,9 +28,9 @@ jobs:
       - name: Look for style errors
         run: pflake8
       - name: Check for importing style
-        run: isort --profile=black --check --diff core tests
+        run: isort --profile=black --check --diff pycpf_cnpj tests
       - name: Look for auto format errors
-        run: black --check --diff core tests
+        run: black --check --diff pycpf_cnpj tests
 
   tests:
     needs: lint

@@ -3,7 +3,7 @@ import rich_click as click
 from rich.console import Console
 from rich.table import Table
 
-from .core import cpf_or_cnpj_is_valid
+from pycpf_cnpj.core import cpf_or_cnpj_is_valid
 
 click.rich_click.USE_RICH_MARKUP = True
 click.rich_click.USE_MARKDOWN = True
@@ -14,7 +14,7 @@ click.rich_click.APPEND_METAVARS_HELP = True
 
 
 @click.group()
-@click.version_option(pkg_resources.get_distribution("py-cpf-cnpj").version)
+@click.version_option(pkg_resources.get_distribution("carlos-moreno-cpf-cnpj").version)
 def main():
     """CPF and CNPJ validator.
     This cli application validates if the CPF/CNPJ entered is valid.

@@ -1,6 +1,6 @@
 import pytest
 
-from core.core import cpf_or_cnpj_is_valid
+from pycpf_cnpj.core import cpf_or_cnpj_is_valid
 
 
 @pytest.mark.unit

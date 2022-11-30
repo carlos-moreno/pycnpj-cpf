@@ -16,9 +16,7 @@ def extract_digits(value):
 
 
 def first_digit_cpf_checker_is_valid(value: str):
-    combinations = list(
-        zip(CPF.get("first_digit"), [int(x) for x in value[:10]])
-    )
+    combinations = list(zip(CPF.get("first_digit"), [int(x) for x in value[:10]]))
     sum_ = 0
     for item in combinations:
         x, y = item
@@ -29,9 +27,7 @@ def first_digit_cpf_checker_is_valid(value: str):
 
 
 def second_digit_cpf_checker_is_valid(value: str):
-    combinations = list(
-        zip(CPF.get("second_digit"), [int(x) for x in value[:11]])
-    )
+    combinations = list(zip(CPF.get("second_digit"), [int(x) for x in value[:11]]))
     sum_ = 0
     for item in combinations:
         x, y = item
@@ -42,9 +38,7 @@ def second_digit_cpf_checker_is_valid(value: str):
 
 
 def first_digit_cnpj_checker_is_valid(value: str):
-    combinations = list(
-        zip(CNPJ.get("first_digit"), [int(x) for x in value[:12]])
-    )
+    combinations = list(zip(CNPJ.get("first_digit"), [int(x) for x in value[:12]]))
     sum_ = 0
     for item in combinations:
         x, y = item
@@ -55,9 +49,7 @@ def first_digit_cnpj_checker_is_valid(value: str):
 
 
 def second_digit_cnpj_checker_is_valid(value: str):
-    combinations = list(
-        zip(CNPJ.get("second_digit"), [int(x) for x in value[:13]])
-    )
+    combinations = list(zip(CNPJ.get("second_digit"), [int(x) for x in value[:13]]))
     sum_ = 0
     for item in combinations:
         x, y = item
@@ -71,13 +63,11 @@ def cpf_or_cnpj_is_valid(value: str):
     value = extract_digits(value)
     result = False
     if len(value) == 11 and (
-        first_digit_cpf_checker_is_valid(value)
-        and second_digit_cpf_checker_is_valid(value)
+        first_digit_cpf_checker_is_valid(value) and second_digit_cpf_checker_is_valid(value)
     ):
         result = True
     if len(value) == 14 and (
-        first_digit_cnpj_checker_is_valid(value)
-        and second_digit_cnpj_checker_is_valid(value)
+        first_digit_cnpj_checker_is_valid(value) and second_digit_cnpj_checker_is_valid(value)
     ):
         result = True
     return result
