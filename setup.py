@@ -29,7 +29,7 @@ def read_requirements(path):
 
 setup(
     name="carlos-moreno-cpf-cnpj",
-    version="0.1.0",
+    version="0.1.1",
     description="CPF and CNPJ validator",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
