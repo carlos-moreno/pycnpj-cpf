@@ -59,7 +59,7 @@ def second_digit_cnpj_checker_is_valid(value: str):
     return result == int(value[13])
 
 
-def cpf_or_cnpj_is_valid(value: str):
+def cnpj_or_cpf_is_valid(value: str):
     value = extract_digits(value)
     result = False
     if len(value) == 11 and (

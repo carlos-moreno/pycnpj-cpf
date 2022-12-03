@@ -34,5 +34,5 @@ exclude = '''
 
 [tool.isort]
 profile = "black"
-src_paths = ["pycpf_cnpj", "tests", "integration"]
+src_paths = ["pycnpj_cpf", "tests", "integration"]
 multi_line_output = 3

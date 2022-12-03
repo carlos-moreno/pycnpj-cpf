@@ -1,6 +1,6 @@
 import pytest
 
-from pycpf_cnpj.core import (
+from pycnpj_cpf.core import (
     first_digit_cnpj_checker_is_valid,
     first_digit_cpf_checker_is_valid,
 )

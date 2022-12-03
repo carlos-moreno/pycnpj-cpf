@@ -1,6 +1,6 @@
 import pytest
 
-from pycpf_cnpj.core import cpf_or_cnpj_is_valid
+from pycnpj_cpf.core import cnpj_or_cpf_is_valid
 
 
 @pytest.mark.unit
@@ -22,9 +22,9 @@ from pycpf_cnpj.core import cpf_or_cnpj_is_valid
         "42278632000161",
     ],
 )
-def test_positive_cpf_or_cnpj_is_valid(value):
+def test_positive_cnpj_or_cpf_is_valid(value):
     """Test positive for function cpf_or_cnpj_is_valid."""
-    assert cpf_or_cnpj_is_valid(value) == True
+    assert cnpj_or_cpf_is_valid(value) == True
 
 
 @pytest.mark.unit
@@ -53,6 +53,6 @@ def test_positive_cpf_or_cnpj_is_valid(value):
         "42278632067179",
     ],
 )
-def test_negative_cpf_or_cnpj_is_valid(value):
+def test_negative_cnpj_or_cpf_is_valid(value):
     """Test negative for function cpf_or_cnpj_is_valid."""
-    assert cpf_or_cnpj_is_valid(value) == False
+    assert cnpj_or_cpf_is_valid(value) == False
