@@ -1,5 +1,7 @@
 # Python CNPJ/CPF
 
+[![CI](https://github.com/carlos-moreno/pycnpj-cpf/actions/workflows/main.yml/badge.svg)](https://github.com/carlos-moreno/pycnpj-cpf/actions/workflows/main.yml)
+
 Python CNPJ/CPF is a library created to validate the entered value, indicating whether it is a valid CNPJ or CPF.
 
 ## Installation
