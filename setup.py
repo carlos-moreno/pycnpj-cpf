@@ -29,7 +29,7 @@ def read_requirements(path):
 
 setup(
     name="pycnpj-cpf",
-    version="0.1.2",
+    version="0.1.3",
     description="CNPJ and CPF validator",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
