@@ -11,12 +11,12 @@ pip install pycnpj-cpf
 
 ## Usage in CLI mode
 
-```py
-#verify CNPJ
-pycnpj-cpf validate --value="37.538.534/0001-86"
-
-#verify CPF
-pycnpj-cpf validate --value="237.491.140-30"
+```sh
+$ #verify CNPJ
+$ pycnpj-cpf validate --value="37.538.534/0001-86"
+$
+$ #verify CPF
+$ pycnpj-cpf validate --value="237.491.140-30"
 ```
 
 ## Usage in Python file
