@@ -1,7 +1,7 @@
 import pytest
 from click.testing import CliRunner
 
-from pycnpj_cpf.cli import validate, main
+from pycnpj_cpf.cli import main, validate
 
 cmd = CliRunner()
 
