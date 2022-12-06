@@ -28,13 +28,7 @@ def test_positive_call_validate_command(value):
 @pytest.mark.integration
 @pytest.mark.medium
 @pytest.mark.parametrize(
-    "wrong_command",
-    [
-        "val",
-        "validaty",
-        "verify",
-        "check"
-    ]
+    "wrong_command", ["val", "validaty", "verify", "check"]
 )
 def test_negative_call_validate_command(wrong_command):
     """Test command validate."""
