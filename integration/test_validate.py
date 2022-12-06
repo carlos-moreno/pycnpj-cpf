@@ -27,7 +27,15 @@ def test_positive_call_validate_command(value):
 
 @pytest.mark.integration
 @pytest.mark.medium
-@pytest.mark.parametrize("wrong_command", ["val", "validaty", "verify", "check"])
+@pytest.mark.parametrize(
+    "wrong_command",
+    [
+        "val",
+        "validaty",
+        "verify",
+        "check"
+    ]
+)
 def test_negative_call_validate_command(wrong_command):
     """Test command validate."""
     result = cmd.invoke(main, wrong_command, "--value=96971115000100")
