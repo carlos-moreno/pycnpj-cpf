@@ -1,4 +1,4 @@
-from re import sub, match
+from re import sub
 
 NUMBER_FOR_REST = 11
 SIZE_CPF = 11
