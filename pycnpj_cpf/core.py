@@ -1,4 +1,4 @@
-from re import sub
+from re import match, sub
 
 NUMBER_FOR_REST = 11
 SIZE_CPF = 11
@@ -14,6 +14,18 @@ CNPJ = {
     "first_digit": [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2],
     "second_digit": [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2],
 }
+
+VALUE_PATTERN = (
+    r"[0-9]{11}|[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
+    r"|[0-9]{14}|[0-9]{2}.[0-9]{3}.[0-9]{3}/[0-9]{4}-[0-9]{2}"
+)
+
+
+def verify_pattern(value: str) -> bool:
+    if bool(match(VALUE_PATTERN, value)):
+        return True
+    else:
+        raise ValueError
 
 
 def remove_punctuation(value: str) -> str:
@@ -80,6 +92,8 @@ def cnpj_or_cpf_is_valid(value: str) -> bool:
     result = False
 
     try:
+        verify_pattern(value)
+        
         value = remove_punctuation(value)
 
         if len(value) == SIZE_CPF and (
@@ -92,6 +106,6 @@ def cnpj_or_cpf_is_valid(value: str) -> bool:
             and second_digit_cnpj_checker_is_valid(value)
         ):
             result = True
-    except (IndexError, ValueError):
-        ...
+    except ValueError:
+        result = False
     return result
