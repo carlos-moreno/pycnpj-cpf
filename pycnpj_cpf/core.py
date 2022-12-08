@@ -93,7 +93,7 @@ def cnpj_or_cpf_is_valid(value: str) -> bool:
 
     try:
         verify_pattern(value)
-        
+
         value = remove_punctuation(value)
 
         if len(value) == SIZE_CPF and (
