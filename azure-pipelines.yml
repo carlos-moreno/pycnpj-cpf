@@ -30,8 +30,7 @@ steps:
     pytest
   displayName: 'Run tests'
 
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
+- task: PublishCodeCoverageResults@2
   inputs:
-    testResultsFiles: '**/test-*.xml'
-    testRunTitle: 'Publish test results for Python $(python.version)'
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'

@@ -18,16 +18,17 @@ fmt:
 	@.venv/bin/black pycnpj_cpf tests
 
 test:
-	@.venv/bin/pytest -s
+	@.venv/bin/pytest --cov=pycnpj_cpf -vv
+	@.venv/bin/coverage xml
 
 watch:
 	@ls **/*.py | entr pytest
 
-clean: ## Clean unused files.
-	@find ./ -name '*.pyc' -exec rm -f {} \;
-	@find ./ -name '__pycache__' -exec rm -rf {} \;
-	@find ./ -name 'Thumbs.db' -exec rm -f {} \;
-	@find ./ -name '*~' -exec rm -f {} \;
+clean:
+	@find . -depth -maxdepth 5 -name '*.pyc' -exec rm -rf {} \;
+	@find . -depth -maxdepth 5 -name '__pycache__' -exec rm -rf {} \;
+	@find . -depth -maxdepth 5 -name 'Thumbs.db' -exec rm -rf {} \;
+	@find . -depth -maxdepth 5 -name '*~' -exec rm -rf {} \;
 	@rm -rf .cache
 	@rm -rf .pytest_cache
 	@rm -rf .mypy_cache
@@ -37,6 +38,9 @@ clean: ## Clean unused files.
 	@rm -rf htmlcov
 	@rm -rf .tox/
 	@rm -rf docs/_build
+	@rm -rf .coverage
+	@rm -rf coverage.xml
+
 
 docs:
 	@mkdocs build --clean
