@@ -1,6 +1,6 @@
 # Python CNPJ/CPF
 
-[![CI](https://github.com/carlos-moreno/pycnpj-cpf/actions/workflows/main.yml/badge.svg)](https://github.com/carlos-moreno/pycnpj-cpf/actions/workflows/main.yml)
+[![Build Status](https://dev.azure.com/omorenodovale/pycnpj-cpf/_apis/build/status%2Fpycnpj-cpf?branchName=main)](https://dev.azure.com/omorenodovale/pycnpj-cpf/_build/latest?definitionId=5&branchName=main)
 
 Python CNPJ/CPF is a library created to validate the entered value, indicating whether it is a valid CNPJ or CPF.
 
@@ -29,7 +29,7 @@ $
 
 ```py
 >>> from pycnpj_cpf.core import cnpj_or_cpf_is_valid
->>> 
+>>>
 >>> cnpj_or_cpf_is_valid("31.851.707/0001-35")
 True
 >>>
@@ -44,19 +44,19 @@ True
 >>>
 >>> cnpj_or_cpf_is_valid("31.851.707/0001-40")
 False
->>> 
+>>>
 >>> cnpj_or_cpf_is_valid("31.851.707/000140")
 False
->>> 
+>>>
 >>> cnpj_or_cpf_is_valid("31.851.707/0001-40a")
 False
->>> 
+>>>
 >>> cnpj_or_cpf_is_valid("31.851.707/0001-40 ")
 False
->>> 
+>>>
 >>> cnpj_or_cpf_is_valid("37538026000106")
 True
->>> 
+>>>
 >>> cnpj_or_cpf_is_valid("37538036000106")
 False
 >>>
