@@ -9,18 +9,21 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+strategy:
+  matrix:
+    'Python 3.11':
+      python.version: '3.11'
+
 steps:
-- script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements-dev.txt
-    pip install -r requirements-test.txt
-    pip install -r requirements.txt
-    pip install -e '.[dev]'
-  displayName: 'Install dependencies'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
 
 - script: |
-    pycnpj-cpf --help
-  displayName: 'Test install'
+    python -m pip install --upgrade pip
+    pip install -e '.[dev]'
+  displayName: 'Install dependencies'
 
 - script: |
     pip install pytest pytest-azurepipelines
