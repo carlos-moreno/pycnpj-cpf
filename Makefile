@@ -18,7 +18,7 @@ fmt:
 	@.venv/bin/black pycnpj_cpf tests
 
 test:
-	@.venv/bin/pytest --cov=pycnpj_cpf -vv --cov-report xml
+	@.venv/bin/pytest --cov=pycnpj_cpf --cov-report=xml -vv
 
 watch:
 	@ls **/*.py | entr pytest

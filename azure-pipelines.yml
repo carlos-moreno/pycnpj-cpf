@@ -27,7 +27,7 @@ steps:
 
 - script: |
     pip install pytest pytest-cov pytest-azurepipelines
-    pytest --cov=pycnpj_cpf -vv --cov-report=xml
+    pytest --cov=pycnpj_cpf --cov-report=xml -vv
   displayName: 'Run tests'
 
 - task: PublishCodeCoverageResults@2
