@@ -43,6 +43,6 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: 'coverage.xml'
+    testResultsFiles: '*/coverage.xml'
     mergeTestResults: true
     failTaskOnFailedTests: true
