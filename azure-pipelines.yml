@@ -34,7 +34,7 @@ steps:
     pytest --cov=pycnpj_cpf --cov-report=xml -vv
   displayName: 'Run tests with pytest and collect code coverage'
 
-- task: PublishCodeCoverageResults@1
+- task: PublishCodeCoverageResults@2
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage.xml'
@@ -43,6 +43,6 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: '*/TEST-.xml'
+    testResultsFiles: 'coverage.xml'
     mergeTestResults: true
     failTaskOnFailedTests: true
