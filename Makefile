@@ -18,7 +18,7 @@ fmt:
 	@.venv/bin/black pycnpj_cpf tests
 
 test:
-	@.venv/bin/pytest --cov=pycnpj_cpf --cov-report=xml -vv
+	@.venv/bin/pytest --cov=pycnpj_cpf --cov-report=xml --junitxml=results.xml -vv
 
 security:
 	@.venv/bin/bandit -c pyproject.toml -r .
@@ -42,6 +42,7 @@ clean:
 	@rm -rf docs/_build
 	@rm -rf .coverage
 	@rm -rf coverage.xml
+	@rm -rf results.xml
 
 
 docs:
