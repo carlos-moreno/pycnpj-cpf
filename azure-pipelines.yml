@@ -31,7 +31,7 @@ steps:
   displayName: 'Analyze code security with Bandit'
 
 - script: |
-    pytest --cov=pycnpj_cpf --cov-report=xml -vv
+    pytest --cov=pycnpj_cpf --cov-report=xml --junitxml=results.xml -vv
   displayName: 'Run tests with pytest and collect code coverage'
 
 - task: PublishCodeCoverageResults@2
