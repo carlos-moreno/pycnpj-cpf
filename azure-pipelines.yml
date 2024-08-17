@@ -43,6 +43,7 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: '$(System.DefaultWorkingDirectory)/test-output.xml'
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/results.xml'
     mergeTestResults: true
     failTaskOnFailedTests: true
