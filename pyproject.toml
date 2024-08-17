@@ -36,3 +36,8 @@ exclude = '''
 profile = "black"
 src_paths = ["pycnpj_cpf", "tests", "integration"]
 multi_line_output = 3
+
+
+[tool.bandit]
+exclude_dirs = [".venv"]
+skips = ["B101"]

@@ -22,15 +22,27 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
+    pip install pytest pytest-cov pytest-azurepipelines bandit
     pip install -e '.[dev]'
   displayName: 'Install dependencies'
 
 - script: |
-    pip install pytest pytest-cov pytest-azurepipelines
-    pytest --cov=pycnpj_cpf --cov-report=xml -vv
-  displayName: 'Run tests'
+    bandit -c pyproject.toml -r .
+  displayName: 'Analyze code security with Bandit'
 
-- task: PublishCodeCoverageResults@2
+- script: |
+    pytest --cov=pycnpj_cpf --cov-report=xml -vv
+  displayName: 'Run tests with pytest and collect code coverage'
+
+- task: PublishCodeCoverageResults@1
   inputs:
-    codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
+    failIfCoverageEmpty: true
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '*/TEST-.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
