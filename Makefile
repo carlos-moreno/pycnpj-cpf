@@ -1,4 +1,4 @@
-.PHONY: virtualenv install ipython lint fmt test watch clean docs docs-serve build publish-test publish
+.PHONY: virtualenv install ipython lint fmt test security watch clean docs docs-serve build publish-test publish
 
 virtualenv:
 	@python -m venv .venv
@@ -19,6 +19,9 @@ fmt:
 
 test:
 	@.venv/bin/pytest --cov=pycnpj_cpf --cov-report=xml -vv
+
+security:
+	@.venv/bin/bandit -c pyproject.toml -r .
 
 watch:
 	@ls **/*.py | entr pytest
