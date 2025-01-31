@@ -1,4 +1,5 @@
-import pkg_resources
+from importlib.metadata import version
+
 import rich_click as click
 from rich.console import Console
 from rich.table import Table
@@ -14,7 +15,7 @@ click.rich_click.APPEND_METAVARS_HELP = True
 
 
 @click.group()
-@click.version_option(pkg_resources.get_distribution("pycnpj-cpf").version)
+@click.version_option(version('pycnpj-cpf'))
 def main():
     """CNPJ and CPF validator.
     This cli application validates if the CNPJ/CPF entered is valid.
@@ -22,14 +23,14 @@ def main():
 
 
 @main.command()
-@click.option("--value", help="Value to be validated.")
+@click.option('-v', '--value', help='Value to be validated.', required=True)
 def validate(value: str) -> bool:
-    table = Table(title="CNPJ and CPF validator")
-    headers = ["CNPJ/CPF", "Is Valid?"]
+    table = Table(title='CNPJ and CPF validator')
+    headers = ['CNPJ/CPF', 'Is Valid?']
     for header in headers:
-        table.add_column(header, style="magenta")
+        table.add_column(header, style='magenta')
 
     result = cnpj_or_cpf_is_valid(value)
-    table.add_row(f"{value}", str(result))
+    table.add_row(f'{value}', str(result))
     console = Console()
     console.print(table)
