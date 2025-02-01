@@ -44,7 +44,8 @@ steps:
     failTaskOnFailedTests: true
 
 - script: |
-    python setup.py sdist bdist_wheel
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    uv build --wheel
   displayName: 'Build Python package'
 
 - task: PublishBuildArtifacts@1
