@@ -33,6 +33,9 @@ def test_positive_second_digit_cpf(value):
         '50629870000100',
         '88506571000143',
         '35868665000104',
+        '12.ABC.345/01DE-35',
+        '12.2HI.345/01DE-40',
+        'AB2YW3Z501DE83',
     ],
 )
 def test_positive_second_digit_cnpj(value):
