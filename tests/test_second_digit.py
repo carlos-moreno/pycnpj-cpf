@@ -9,32 +9,32 @@ from pycnpj_cpf.core import (
 @pytest.mark.unit
 @pytest.mark.high
 @pytest.mark.parametrize(
-    "value",
+    'value',
     [
-        "98803280278",
-        "71858204054",
-        "06982641007",
-        "89219560003",
-        "53683761032",
+        '98803280278',
+        '71858204054',
+        '06982641007',
+        '89219560003',
+        '53683761032',
     ],
 )
 def test_positive_second_digit_cpf(value):
     """Test positive for function second_digit_cpf_checker_is_valid."""
-    assert second_digit_cpf_checker_is_valid(value) == True
+    assert second_digit_cpf_checker_is_valid(value)
 
 
 @pytest.mark.unit
 @pytest.mark.high
 @pytest.mark.parametrize(
-    "value",
+    'value',
     [
-        "97744421000169",
-        "89420356000198",
-        "50629870000100",
-        "88506571000143",
-        "35868665000104",
+        '97744421000169',
+        '89420356000198',
+        '50629870000100',
+        '88506571000143',
+        '35868665000104',
     ],
 )
 def test_positive_second_digit_cnpj(value):
     """Test positive for function second_digit_cnpj_checker_is_valid."""
-    assert second_digit_cnpj_checker_is_valid(value) == True
+    assert second_digit_cnpj_checker_is_valid(value)
