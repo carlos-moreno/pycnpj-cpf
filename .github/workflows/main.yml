@@ -46,7 +46,7 @@ jobs:
       - name: Install UV
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
       - name: Run tests
-        run: uv run pytest -v --forked --junitxml=test-result.xml
+        run: uv run pytest -v --junitxml=test-result.xml
       - name: Publish junit results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
