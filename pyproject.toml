@@ -27,6 +27,7 @@ dev = [
     "pytest-cov",
     "ruff",
     "taskipy",
+    "bandit",
 ]
 
 [tool.setuptools]
@@ -54,9 +55,14 @@ quote-style = 'single'
 pythonpath = "."
 addopts = '-p no:warnings'
 
+[tool.bandit]
+exclude_dirs = [".venv"]
+skips = ["B101"]
+
 [tool.taskipy.tasks]
 lint = 'uv run ruff check --fix pycnpj_cpf tests'
 format = 'uv run ruff format pycnpj_cpf tests'
+security = 'uv run bandit -c pyproject.toml -r .'
 pre_test = 'task lint'
 test = """
     uv run pytest --cov=pycnpj_cpf -vv
