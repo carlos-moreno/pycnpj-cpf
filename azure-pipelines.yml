@@ -46,6 +46,7 @@ steps:
 - script: |
     curl -LsSf https://astral.sh/uv/install.sh | sh
     uv build --wheel
+    mv dist/*.whl $(Build.ArtifactStagingDirectory)/
   displayName: 'Build Python package'
 
 - task: PublishBuildArtifacts@1
