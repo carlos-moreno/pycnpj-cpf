@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=45"]
-build-backend = 'setuptools.build_meta'
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "pycnpj-cpf"
@@ -9,9 +9,9 @@ authors = [
     {name = "Carlos Moreno", email = "omorenodovale@gmail.com"},
 ]
 version = "0.2.0"
-dynamic = ["readme"]
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
+readme = "README.md"
 dependencies = [
     "click",
     "rich",
@@ -29,12 +29,6 @@ dev = [
     "taskipy",
     "bandit",
 ]
-
-[tool.setuptools]
-packages = ["pycnpj_cpf"]
-
-[tool.setuptools.dynamic]
-readme = {file = ["README.md"]}
 
 [tool.ruff]
 line-length = 79
