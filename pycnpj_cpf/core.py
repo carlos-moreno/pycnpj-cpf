@@ -63,7 +63,10 @@ VALUE_PATTERN = (
 
 
 def verify_pattern(value: str) -> bool:
-    if bool(match(VALUE_PATTERN, value)):
+    if (
+        bool(match(VALUE_PATTERN, value))
+        and len(set(sub(PATTERN, '', value))) > 1
+    ):
         return True
     else:
         raise ValueError
