@@ -8,7 +8,7 @@ description = "CNPJ and CPF validator"
 authors = [
     {name = "Carlos Moreno", email = "omorenodovale@gmail.com"},
 ]
-version = "0.2.0"
+version = "0.2.1"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
 readme = "README.md"
@@ -17,6 +17,9 @@ dependencies = [
     "rich",
     "rich-click",
 ]
+
+[project.urls]
+repository = "https://github.com/carlos-moreno/pycnpj-cpf"
 
 [project.scripts]
 pycnpj-cpf = "pycnpj_cpf.__main__:main"
