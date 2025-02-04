@@ -8,7 +8,7 @@ description = "CNPJ and CPF validator"
 authors = [
     {name = "Carlos Moreno", email = "omorenodovale@gmail.com"},
 ]
-version = "0.2.1"
+version = "0.2.2"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
 readme = "README.md"
