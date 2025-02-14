@@ -35,7 +35,7 @@ def test_positive_first_digit_cpf(value):
         '35868665000104',
         '12.ABC.345/01DE-35',
         '12.2HI.345/01DE-40',
-        'AB2YW3Z501DE83',
+        'AB2YW3Z501DE69',
     ],
 )
 def test_positive_first_digit_cnpj(value):
